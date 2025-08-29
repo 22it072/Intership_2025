@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Quiz - Quiz Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <h1><a href="quiz.html">Quiz Portal</a></h1>
+            </div>
+            <div class="nav-right">
+                </div>
+        </nav>
+    </header>
+
+    <main class="quiz-container">
+        <div class="quiz-card creator-card">
+            <h2>Create Your Own Quiz</h2>
+            <form id="create-quiz-form">
+                <div class="input-group">
+                    <label for="quiz-title">Quiz Title</label>
+                    <input type="text" id="quiz-title" placeholder="e.g., World Capitals Trivia" required>
+                </div>
+
+                <div id="questions-container">
+                    <div class="question-editor">
+                        <h4>Question 1</h4>
+                        <div class="input-group">
+                            <input type="text" class="question-input" placeholder="Enter your question" required>
+                        </div>
+                        <div class="options-creator">
+                            <input type="text" class="option-input" placeholder="Option A (Correct Answer)" required>
+                            <input type="text" class="option-input" placeholder="Option B" required>
+                            <input type="text" class="option-input" placeholder="Option C" required>
+                            <input type="text" class="option-input" placeholder="Option D" required>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" id="add-question-btn" class="btn btn-secondary">Add Another Question</button>
+                <hr class="form-divider">
+                <button type="submit" class="btn">Save Quiz</button>
+            </form>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

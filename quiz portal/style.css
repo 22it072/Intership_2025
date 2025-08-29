@@ -1,0 +1,425 @@
+/* General Styling */
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --dark-color: #333;
+    --light-color: #f4f7f6;
+    --white-color: #fff;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    line-height: 1.6;
+    color: var(--dark-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Authentication Page --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: var(--white-color);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+}
+
+.form-container h2 {
+    margin-bottom: 0.5rem;
+}
+.form-container p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--white-color);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-link {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.toggle-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* --- Quiz Page: Navbar --- */
+header {
+    background: var(--white-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.nav-left h1 {
+    color: var(--primary-color);
+}
+
+.nav-center {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-stat {
+    font-size: 1.1rem;
+}
+
+.nav-stat span {
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+/* --- User Dropdown Menu --- */
+.user-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.user-menu-trigger {
+    background: none;
+    border: 1px solid #ddd;
+    color: var(--dark-color);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.user-menu-trigger:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    top: 120%;
+    background-color: var(--white-color);
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown-content hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 4px 0;
+}
+
+/* --- Quiz Container & Cards --- */
+.quiz-container {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.quiz-card {
+    background: var(--white-color);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quiz-card h2 {
+    margin-bottom: 1rem;
+}
+
+/* --- Quiz Screen --- */
+.quiz-header {
+    text-align: right;
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+#question-text {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: left;
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.option-btn:hover {
+    border-color: var(--secondary-color);
+    background: #e9ecef;
+}
+
+.option-btn.selected {
+    border-color: var(--primary-color);
+    background-color: #e0d4f5;
+}
+
+.option-btn.correct {
+    background-color: #d4edda;
+    border-color: var(--success-color);
+    color: var(--dark-color);
+}
+
+.option-btn.wrong {
+    background-color: #f8d7da;
+    border-color: var(--danger-color);
+    color: var(--dark-color);
+}
+
+.quiz-footer {
+    text-align: right;
+}
+
+.quiz-footer .btn {
+    width: auto;
+    padding: 0.8rem 2rem;
+}
+
+/* --- Results Screen --- */
+.results-summary {
+    margin: 2rem 0;
+    text-align: left;
+}
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #eee;
+}
+.result-item:last-child {
+    border-bottom: none;
+}
+.result-item span {
+    font-weight: bold;
+}
+
+/* --- Modals --- */
+.modal {
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--white-color);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-content .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.profile-details { margin-top: 1.5rem; }
+.detail-item { display: flex; justify-content: space-between; padding: 12px 8px; font-size: 1.1rem; border-bottom: 1px solid #eee; }
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    nav { flex-direction: column; gap: 1rem; }
+    .options-grid { grid-template-columns: 1fr; }
+}
+/* Add these styles to the bottom of css/style.css */
+
+/* --- Quiz Creator Form --- */
+.creator-card {
+    text-align: left;
+}
+
+#questions-container {
+    margin-bottom: 1.5rem;
+}
+
+.question-editor {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.question-editor h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.options-creator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+.options-creator .option-input {
+    padding: 12px;       /* Increase padding for more height */
+    font-size: 1rem;     /* Make the text slightly larger */
+    border-radius: 6px;  /* Optional: slightly softer corners */
+    border: 1px solid #ccc;
+}
+
+.options-creator .option-input:first-child {
+    border-left: 3px solid var(--success-color);
+}
+
+.options-creator .option-input:first-child {
+    border-left: 3px solid var(--success-color);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    width: auto;
+    padding: 0.8rem 1.5rem;
+}
+
+.form-divider {
+    margin: 2rem 0;
+    border: 0;
+    border-top: 1px solid #e9ecef;
+}
+
+/* --- Quiz Selection List --- */
+#quiz-list-container {
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.quiz-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz-list-item:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transform: translateY(-2px);
+}
+
+.quiz-info h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.quiz-info span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Make nav h1 a link */
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
